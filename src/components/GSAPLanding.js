@@ -10,11 +10,11 @@ export default function landingAnimate() {
 
     const timeline = gsap.timeline()
     const infiniteClick = gsap.timeline({repeat: -1})
-    const quote = "Success is not final, failure is not fatal. It is the courage that counts"
+    const quote = "Ready to revolutionize your workflow?"
 
 
-    timeline.fromTo(".landing-h1", 
-        {
+    // Page Launch
+        timeline.fromTo(".landing-h1", {
             y: 50
         },
         {
@@ -26,14 +26,12 @@ export default function landingAnimate() {
             ease: 'back.Out',
             stagger: 0.2
         })
-
-        timeline.to("#notebook",
-        {
-            opacity: 1,
+        
+        timeline.to(".bubble", {
             y:0,
-            scale: 1,
-            ease: "power.inOut"  
-        })
+            opacity: 1,
+            stagger: 0.2
+        }, "<")
 
         timeline.to(".landing-task-item", {
             opacity: 1,
@@ -52,50 +50,26 @@ export default function landingAnimate() {
             y: 0
         }, "<")
 
-        timeline.to("#landing-button-1", {
-            x: 1,
-            y: 0,
-            ease: "bounce.inOut",
-            duration: 2
-        }, "<")
 
-        timeline.to("#landing-button-2", {
-            x: 1,
-            y: 0,
-            ease: "bounce.inOut",
-            duration: 2,
-        }, "<")
-        
-        timeline.to("#landing-button-1", {
-            width: "10rem",
-            height: "3.5rem",
-            borderRadius: "5px",
-        })
-
-        timeline.to("#landing-button-2", {
-            width: "13rem",
-            height: "3.5rem",
-            borderRadius: "5px",
-        }, "<")
-
-        timeline.to("#landing-button-1", {
-            color: "#FFF",
-        })
-
-        timeline.to("#landing-button-2", {
-            color: "#000",
-        }, "<")
-
-
-        infiniteClick.to("#cursor", {
-            x: 0,
+        timeline.to(".landing-button", {
+            ease: "power1.inOut",
+            opacity: 1,
             y: 0
         })
-
         
+
+        gsap.to(".dashed-ring", {
+            rotate: "360deg",
+            repeat: -1,
+            duration: 100
+        })
+
+        //Infinite Replay
+
         infiniteClick.to("#landing-dropdown", {
             opacity: 1,
             y: 0,
+            delay: 10
         })
 
         infiniteClick.to("#chev", {
@@ -109,14 +83,7 @@ export default function landingAnimate() {
             rotate: 0,
             stagger: 0.1
         })
-        
-        infiniteClick.to("#cursor", {
-            x: -20,
-            y: 100,
-            duration: 2,
-            ease: "sine.out"
-        })
-         
+                 
         infiniteClick.to("#drop-item-1", {
             backgroundColor:"#3A5DE9",
             color: "#FFF",
@@ -149,68 +116,9 @@ export default function landingAnimate() {
             rotate:"180deg"
         }, "<")
 
-
-        infiniteClick.to("#cursor", {
-            x: -450,
-            y: 320,
-            duration: 2,
-            ease: "sine.out"
-        })
-
-        infiniteClick.to("#cursor", {
-            x: -520,
-            y: 250,
-            duration: 2,
-            ease: "sine.out"
-        })
-
-        
-        infiniteClick.to("#landing-task", {
-            x: -50,
-            y: -60,
-            duration: 2,
-            ease: "sine.out"
-        }, "<")
-        
-
-        infiniteClick.to("#cursor", {
-            x: -300,
-            y: 1000,
-            duration: 2,
-            ease: "sine.out"
-        })
         
 
 
-        infiniteClick.to("#cursor", {
-            x: -520,
-            y: 250,
-            duration: 2,
-            ease: "sine.out"
-        })
-
-
-        infiniteClick.to("#cursor", {
-            x: -450,
-            y: 320,
-            duration: 2,
-            ease: "sine.out"
-        })
-
-        
-        infiniteClick.to("#landing-task", {
-            x: 0,
-            y: 0,
-            duration: 2,
-            ease: "sine.out"
-        }, "<")
-
-        infiniteClick.to("#cursor", {
-            x: 50,
-            y: 50,
-            duration: 2,
-            ease: "sine.out"
-        })
 
 
         gsap.to('#showcase-h1',{
@@ -339,5 +247,103 @@ export default function landingAnimate() {
             y: 20,
             opacity: 0
         }, "<")
+
+        gsap.to("#why-us-1 .appear", {
+            scrollTrigger: {
+                trigger: "#why-us-1",
+                // markers: true,
+                start: '-40% 40%',
+                end: '-10% 20%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            y: 0,
+            opacity: 1,
+            stagger: 0.2        
+        })
         
+        gsap.to("#why-us-1 .line", {
+            scrollTrigger: {
+                trigger: "#why-us-1",
+                // markers: true,
+                start: '-40% 40%',
+                end: '-10% 20%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            width: "70%",
+            opacity: 1,
+            stagger: 0.4      
+        })
+
+
+        gsap.to("#why-us-2 .appear", {
+            scrollTrigger: {
+                trigger: "#why-us-2",
+                // markers: true,
+                start: '-40% 40%',
+                end: '-10% 20%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            y: 0,
+            opacity: 1,
+            stagger: 0.2        
+        })
+        
+        gsap.to("#why-us-2 .line", {
+            scrollTrigger: {
+                trigger: "#why-us-2",
+                // markers: true,
+                start: '-40% 40%',
+                end: '-10% 20%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            width: "70%",
+            opacity: 1,
+            stagger: 0.4      
+        })
+
+                
+        gsap.fromTo("#powered-by > div", {width:0, opacity: 0},{
+            scrollTrigger: {
+                trigger: "#powered-by",
+                // markers: true,
+                start: '-40% 60%',
+                end: '-10% 50%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            width: "100%",
+            opacity: 1,
+        })
+
+        gsap.fromTo("#powered-by h2", {width:0, opacity: 0, scale: 6,},{
+            scrollTrigger: {
+                trigger: "#powered-by",
+                // markers: true,
+                start: '-40% 60%',
+                end: '-10% 50%',
+                scrub: 1,
+            },
+            ease: "power1.inOut",
+            width: "100%",
+            opacity: 1,
+            scale: 1
+        })
+
+        gsap.fromTo("#side-ring", {width: "300vw"},{
+            scrollTrigger: {
+                trigger: "#reviews",
+                markers: true,
+                start: '0% 100%',
+                end: '40% 50%',
+                scrub: 12,
+        
+            },
+            ease: "none",
+            x: "290vw",
+        })
 }
+

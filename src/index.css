@@ -130,22 +130,10 @@ textarea:focus, input:focus{
 }
 
 
-#landing-button-1 {
-  transform: translateX(-300px);
-  width: 50px;
-  height: 50px;
-  color: transparent;
-  border-radius: 100%;
-  z-index: 999;
-}
-
-#landing-button-2 {
-  transform: translateY(-700px);
-  width: 50px;
-  height: 50px;
-  color: transparent;
-  border-radius: 100%;
-  z-index: 999;
+.landing-button {
+  text-wrap: nowrap;
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 #landing-dropdown{
@@ -159,9 +147,6 @@ textarea:focus, input:focus{
   background-color: #FFF;
 }
 
-#cursor {
-  transform: translateX(50px) translateY(50px) rotate(-25deg);
-}
 
 #chev {
   transform: rotate(180deg);
@@ -191,12 +176,8 @@ textarea:focus, input:focus{
 }
 
 #login-button {
-  transform: translateX(300px);
-  width: 50px;
-  height: 50px;
-  color: transparent;
-  border-radius: 100%;
-  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px)
 }
 
 
@@ -239,4 +220,31 @@ textarea:focus, input:focus{
 
   }
 
+}
+
+.appear {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#powered-by {
+  h2 {
+    text-wrap: nowrap;
+  }
+}
+
+
+.bubble:nth-of-type(1){
+  transform: translateY(-10px);
+}
+
+.bubble:nth-of-type(2){
+  transform: translateY(-15px)
+}
+.bubble:nth-of-type(3){
+  transform: translateY(-20px)
+}
+.bubble:nth-of-type(4){
+
+  transform: translateY(-5px)
 }
